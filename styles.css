@@ -496,11 +496,6 @@ nav {
     text-decoration: underline;
 }
 
-.contact-note {
-    margin-top: 2rem;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
 
 .contact-link {
     color: var(--primary-blue);
