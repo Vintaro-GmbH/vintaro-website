@@ -15,7 +15,14 @@
       "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" auth login)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo create vintaro-website --private --source=. --remote=origin --push)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" api -X POST repos/Vintaro-GmbH/vintaro-website/pages -f source[branch]=master -f source[path]=/)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo edit Vintaro-GmbH/vintaro-website --visibility public)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo edit Vintaro-GmbH/vintaro-website --visibility public --accept-visibility-change-consequences)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo view Vintaro-GmbH/vintaro-website)",
+      "Bash(git push)"
     ],
     "deny": [],
     "ask": []
