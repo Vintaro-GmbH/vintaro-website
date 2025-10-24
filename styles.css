@@ -81,8 +81,7 @@
 /* Sanfte Übergänge für Theme-Wechsel */
 body,
 header,
-footer,
-.feature-card {
+footer {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -428,48 +427,6 @@ nav {
     font-size: 18px;
 }
 
-/* ==================== */
-/* FEATURES GRID */
-/* ==================== */
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    margin-top: 48px;
-}
-
-.feature-card {
-    background-color: var(--surface);
-    padding: 32px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px var(--shadow);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.feature-card:hover {
-    box-shadow: 0 4px 20px var(--shadow-hover);
-    border-color: var(--primary-blue);
-}
-
-.section-alt .feature-card {
-    background-color: var(--background);
-}
-
-.feature-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
-}
-
-.feature-title {
-    margin-bottom: 16px;
-}
-
-.feature-text {
-    color: var(--text-color);
-    line-height: 1.6;
-}
 
 /* ==================== */
 /* CONTACT SECTION */
@@ -617,10 +574,6 @@ nav {
 
     .section {
         padding: 60px 24px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -932,4 +885,201 @@ footer {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* ========================================
+   ABOUT SECTION - REDESIGN
+   ======================================== */
+
+.about-section {
+    background: var(--surface);
+    padding: 5rem 2rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-lead {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.about-lead strong {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.about-philosophy {
+    font-size: 1.2rem;
+    font-style: italic;
+    padding: 2rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: 0 8px 8px 0;
+    margin: 2.5rem 0;
+}
+
+[data-theme="dark"] .about-philosophy {
+    background: rgba(52, 152, 219, 0.15);
+}
+
+/* ========================================
+   SERVICES SECTION - REDESIGN
+   ======================================== */
+
+.services-section {
+    padding: 5rem 2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.service-card {
+    background: var(--surface);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 8px 24px var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: var(--navy-blue);
+    margin-bottom: 1rem;
+}
+
+.service-card > p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-details li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-details li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.services-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    border-radius: 12px;
+    margin-top: 3rem;
+}
+
+[data-theme="dark"] .services-cta {
+    background: linear-gradient(135deg, #2C5AA0 0%, #1E3A5F 100%);
+}
+
+.cta-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: white;
+    margin: 0;
+}
+
+.cta-text strong {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-lead {
+        font-size: 1.2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .about-philosophy {
+        font-size: 1.05rem;
+        padding: 1.5rem;
+    }
+
+    .services-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    .cta-text {
+        font-size: 1.1rem;
+    }
+
+    .cta-text strong {
+        font-size: 1.3rem;
+    }
+}
+
+/* ========================================
+   HERO H1 OPTIMIERUNG
+   ======================================== */
+
+.hero h1 br {
+    display: block;
 }
