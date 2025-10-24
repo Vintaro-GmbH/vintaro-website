@@ -161,7 +161,7 @@ nav {
     margin: 0 auto;
     padding: 1.5rem 3rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 3rem;
 }
@@ -191,6 +191,26 @@ nav {
     opacity: 0.85;
 }
 
+.logo-text {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.logo-vintaro {
+    font-size: 1.8rem;
+    color: var(--navy-blue);
+    letter-spacing: 0.05em;
+}
+
+.logo-gmbh {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -213,7 +233,7 @@ nav {
 
 .nav-list {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
     list-style: none;
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -333,6 +353,14 @@ nav {
     margin: 0 auto;
 }
 
+.hero-logo {
+    width: 300px;
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
@@ -346,6 +374,11 @@ nav {
 
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+
+    .hero-logo {
+        width: 200px;
+        margin-bottom: 1.5rem;
     }
 
     .shape-1 {
@@ -535,6 +568,14 @@ nav {
 
     .logo-img {
         height: 80px;
+    }
+
+    .logo-vintaro {
+        font-size: 1.4rem;
+    }
+
+    .logo-gmbh {
+        font-size: 1rem;
     }
 
     .mobile-menu-toggle {
