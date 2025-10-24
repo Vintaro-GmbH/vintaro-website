@@ -1083,3 +1083,250 @@ footer {
 .hero h1 br {
     display: block;
 }
+
+/* =====================================================
+   VINTARO REDESIGN - MENSCHLICH, ZIELORIENTIERT, EFFEKTIV
+   VERSTÄRKTE VISUELLE STYLES
+   ===================================================== */
+
+/* About Section - Verstärkt */
+.about-section {
+    background: var(--background);
+    padding: 6rem 2rem;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about-lead {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.about-lead strong {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.about-content > p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* PHILOSOPHIE BOX - Das Highlight! */
+.about-philosophy {
+    font-size: 1.25rem !important;
+    font-style: italic;
+    padding: 2.5rem !important;
+    background: rgba(52, 152, 219, 0.12) !important;
+    border-left: 5px solid var(--primary-blue) !important;
+    border-radius: 0 12px 12px 0 !important;
+    margin: 3rem 0 !important;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15) !important;
+}
+
+[data-theme="dark"] .about-philosophy {
+    background: rgba(52, 152, 219, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25) !important;
+}
+
+.about-philosophy em {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Services Section - Verstärkt */
+.services-section {
+    padding: 6rem 2rem;
+    background: var(--surface);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* SERVICE CARDS - Das neue Design! */
+.service-card {
+    background: var(--background);
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    border: 3px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.2);
+    transform: translateY(-8px);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+[data-theme="dark"] .service-card {
+    background: var(--surface);
+}
+
+[data-theme="dark"] .service-card:hover {
+    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.3);
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    line-height: 1;
+}
+
+.service-card h3 {
+    font-size: 2rem;
+    color: var(--navy-blue);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.service-card > p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+/* Service Details Liste */
+.service-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-details li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.service-details li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* CTA BOX - Der Abschluss! */
+.services-cta {
+    text-align: center;
+    padding: 4rem 3rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    border-radius: 16px;
+    margin-top: 4rem;
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.25);
+}
+
+[data-theme="dark"] .services-cta {
+    background: linear-gradient(135deg, #2C5AA0 0%, #1E3A5F 100%);
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.4);
+}
+
+.cta-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: white;
+    margin: 0;
+}
+
+.cta-text strong {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+/* Section Headings einheitlich */
+.section h2 {
+    font-size: 2.75rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--navy-blue);
+    font-weight: 700;
+}
+
+/* Responsive Optimierungen - Verstärkt */
+@media (max-width: 768px) {
+    .about-section,
+    .services-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .about-lead {
+        font-size: 1.25rem;
+    }
+
+    .about-content > p {
+        font-size: 1.05rem;
+    }
+
+    .about-philosophy {
+        font-size: 1.1rem !important;
+        padding: 2rem !important;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .service-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .service-icon {
+        font-size: 3rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.75rem;
+    }
+
+    .cta-text {
+        font-size: 1.2rem;
+    }
+
+    .cta-text strong {
+        font-size: 1.5rem;
+    }
+
+    .section h2 {
+        font-size: 2.25rem;
+    }
+}
