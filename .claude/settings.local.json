@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm -v:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(npm i:*)",
+      "Read(//e/VintaroGmbH/Website/**)",
+      "Bash(pnpm create:*)",
+      "Bash(python -m http.server:*)",
+      "Read(//e/VintaroGmbH/**)",
+      "Bash(gh:*)",
+      "Bash(winget install:*)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" --version)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" auth login)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git config:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
