@@ -358,7 +358,14 @@ nav {
     max-width: 90%;
     height: auto;
     margin-bottom: 2rem;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .hero-logo {
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* Responsive */
@@ -379,6 +386,7 @@ nav {
     .hero-logo {
         width: 200px;
         margin-bottom: 1.5rem;
+        padding: 1.5rem;
     }
 
     .shape-1 {
