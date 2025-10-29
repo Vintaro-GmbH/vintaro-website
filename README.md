@@ -75,3 +75,5 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/c
 ---
 
 **Staging Check:** This line confirms staging branch deployment workflow is active.
+
+staging smoke - 2025-10-29T10:30:00
