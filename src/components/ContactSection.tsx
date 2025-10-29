@@ -1,7 +1,67 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Mail, Calendar, MessageSquare } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
+import { Mail, Calendar, MessageSquare, Phone } from "lucide-react";
+import { ConsentModal } from "@/components/stella/ConsentModal";
+import { ChatDrawer } from "@/components/stella/ChatDrawer";
 
 export const ContactSection = () => {
+  const [consentModalOpen, setConsentModalOpen] = useState(false);
+  const [consentType, setConsentType] = useState<'call' | 'chat'>('call');
+  const [chatDrawerOpen, setChatDrawerOpen] = useState(false);
+
+  // Feature flags from environment
+  const callEnabled = import.meta.env.NEXT_PUBLIC_STELLA_CALL === '1';
+  const chatEnabled = import.meta.env.NEXT_PUBLIC_STELLA_CHAT === '1';
+
+  const handleCallClick = () => {
+    if (!callEnabled) return;
+    setConsentType('call');
+    setConsentModalOpen(true);
+  };
+
+  const handleChatClick = () => {
+    if (!chatEnabled) return;
+    setConsentType('chat');
+    setConsentModalOpen(true);
+  };
+
+  const handleConsentAccept = async () => {
+    try {
+      // Log consent to backend
+      await fetch('http://localhost:3001/api/stella/consent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: consentType, consent: true }),
+      });
+
+      // Proceed with the action
+      if (consentType === 'call') {
+        // For calls, just proceed to the phone number (link stays the same for now)
+        window.location.href = 'tel:+43512385144';
+      } else {
+        // For chat, open the drawer
+        setChatDrawerOpen(true);
+      }
+    } catch (error) {
+      console.error('[CONSENT] Failed to log consent:', error);
+    }
+  };
+
+  const handleConsentDecline = async () => {
+    try {
+      // Log declined consent
+      await fetch('http://localhost:3001/api/stella/consent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: consentType, consent: false }),
+      });
+    } catch (error) {
+      console.error('[CONSENT] Failed to log decline:', error);
+    }
+  };
+
   return (
     <section id="contact" className="relative py-32 overflow-hidden">
       {/* Background Effects */}
@@ -25,24 +85,80 @@ export const ContactSection = () => {
             </p>
 
             {/* Contact Options */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="glass p-6 rounded-2xl hover:glow-primary transition-all duration-300 cursor-pointer group">
-                <Mail className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-sm text-muted-foreground">kontakt@vintaro.ai</p>
-              </div>
+            <div className="grid md:grid-cols-4 gap-6 mb-12">
+              <TooltipProvider>
+                {/* AI Call Agent */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div
+                      className={`glass p-6 rounded-2xl transition-all duration-300 group relative ${
+                        callEnabled
+                          ? 'hover:glow-primary cursor-pointer'
+                          : 'opacity-50 cursor-not-allowed'
+                      }`}
+                      onClick={handleCallClick}
+                    >
+                      <Badge
+                        variant="secondary"
+                        className="absolute top-3 right-3 text-xs bg-primary/20 text-primary border-primary/30"
+                      >
+                        Beta
+                      </Badge>
+                      <Phone className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                      <h3 className="font-semibold mb-2">Call (AI-Callagent)</h3>
+                      <p className="text-sm text-muted-foreground">KI-gestützt</p>
+                    </div>
+                  </TooltipTrigger>
+                  {!callEnabled && (
+                    <TooltipContent>
+                      <p>Bald verfügbar</p>
+                    </TooltipContent>
+                  )}
+                </Tooltip>
 
-              <div className="glass p-6 rounded-2xl hover:glow-primary transition-all duration-300 cursor-pointer group">
-                <Calendar className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-semibold mb-2">Meeting</h3>
-                <p className="text-sm text-muted-foreground">Termin buchen</p>
-              </div>
+                {/* Email */}
+                <div className="glass p-6 rounded-2xl hover:glow-primary transition-all duration-300 cursor-pointer group">
+                  <Mail className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold mb-2">Email</h3>
+                  <p className="text-sm text-muted-foreground">kontakt@vintaro.ai</p>
+                </div>
 
-              <div className="glass p-6 rounded-2xl hover:glow-primary transition-all duration-300 cursor-pointer group">
-                <MessageSquare className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="font-semibold mb-2">Live Chat</h3>
-                <p className="text-sm text-muted-foreground">Sofort verfügbar</p>
-              </div>
+                {/* Meeting */}
+                <div className="glass p-6 rounded-2xl hover:glow-primary transition-all duration-300 cursor-pointer group">
+                  <Calendar className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold mb-2">Meeting</h3>
+                  <p className="text-sm text-muted-foreground">Termin buchen</p>
+                </div>
+
+                {/* Live Chat */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div
+                      className={`glass p-6 rounded-2xl transition-all duration-300 group relative ${
+                        chatEnabled
+                          ? 'hover:glow-primary cursor-pointer'
+                          : 'opacity-50 cursor-not-allowed'
+                      }`}
+                      onClick={handleChatClick}
+                    >
+                      <Badge
+                        variant="secondary"
+                        className="absolute top-3 right-3 text-xs bg-primary/20 text-primary border-primary/30"
+                      >
+                        Beta
+                      </Badge>
+                      <MessageSquare className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                      <h3 className="font-semibold mb-2">Live Chat</h3>
+                      <p className="text-sm text-muted-foreground">KI-Assistent</p>
+                    </div>
+                  </TooltipTrigger>
+                  {!chatEnabled && (
+                    <TooltipContent>
+                      <p>Bald verfügbar</p>
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              </TooltipProvider>
             </div>
 
             {/* Primary CTA */}
@@ -74,6 +190,17 @@ export const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals and Drawers */}
+      <ConsentModal
+        open={consentModalOpen}
+        onOpenChange={setConsentModalOpen}
+        type={consentType}
+        onAccept={handleConsentAccept}
+        onDecline={handleConsentDecline}
+        language="de"
+      />
+      <ChatDrawer open={chatDrawerOpen} onOpenChange={setChatDrawerOpen} />
     </section>
   );
 };

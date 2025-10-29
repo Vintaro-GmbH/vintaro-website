@@ -1,0 +1,60 @@
+{
+  "consent": {
+    "call": {
+      "de": {
+        "title": "Einwilligung zur KI-gestützten Telefonie",
+        "description": "Durch die Nutzung unseres KI-Callagenten stimmen Sie folgenden Bedingungen zu:",
+        "points": [
+          "Das Gespräch wird aufgezeichnet und verarbeitet",
+          "Eine KI-gestützte Sprachverarbeitung analysiert Ihre Anfrage",
+          "Ihre Daten werden gemäß DSGVO verarbeitet",
+          "Sie können jederzeit widersprechen"
+        ],
+        "acceptButton": "Ich stimme zu",
+        "declineButton": "Ablehnen",
+        "privacyLink": "Datenschutzerklärung"
+      },
+      "en": {
+        "title": "Consent for AI-Powered Telephony",
+        "description": "By using our AI call agent, you agree to the following terms:",
+        "points": [
+          "The call will be recorded and processed",
+          "AI-powered speech processing analyzes your request",
+          "Your data is processed in accordance with GDPR",
+          "You can object at any time"
+        ],
+        "acceptButton": "I agree",
+        "declineButton": "Decline",
+        "privacyLink": "Privacy Policy"
+      }
+    },
+    "chat": {
+      "de": {
+        "title": "Einwilligung zum KI-Chat",
+        "description": "Durch die Nutzung unseres KI-Chatbots stimmen Sie folgenden Bedingungen zu:",
+        "points": [
+          "Ihre Nachrichten werden durch KI verarbeitet",
+          "Die Konversation wird zu Qualitätszwecken gespeichert",
+          "Ihre Daten werden gemäß DSGVO verarbeitet",
+          "Sie können den Chat jederzeit beenden"
+        ],
+        "acceptButton": "Ich stimme zu",
+        "declineButton": "Ablehnen",
+        "privacyLink": "Datenschutzerklärung"
+      },
+      "en": {
+        "title": "Consent for AI Chat",
+        "description": "By using our AI chatbot, you agree to the following terms:",
+        "points": [
+          "Your messages are processed by AI",
+          "The conversation is stored for quality purposes",
+          "Your data is processed in accordance with GDPR",
+          "You can end the chat at any time"
+        ],
+        "acceptButton": "I agree",
+        "declineButton": "Decline",
+        "privacyLink": "Privacy Policy"
+      }
+    }
+  }
+}
