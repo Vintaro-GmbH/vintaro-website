@@ -1,0 +1,88 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./app/[locale]/stella-showcase/components/holo.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+.holo_holoRoot__DJmC8 {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.holo_gradientBase__S7i7d {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a1628 0%, #0d1b2a 50%, #1b263b 100%);
+}
+
+.holo_canvas__NiICz {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .holo_holoRoot__DJmC8 * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./app/[locale]/stella-showcase/components/stella.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Stella Glassmorphism Effects */
+
+.stella_glass__7xs2r {
+  background: hsl(var(--stella-card));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--stella-border));
+  border-radius: 1rem;
+}
+
+.stella_glassCard__U415T {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stella_glassCard__U415T:hover {
+  transform: scale(1.05);
+  border-color: hsl(var(--stella-cyan));
+  box-shadow: 0 0 30px hsl(var(--stella-glow));
+}
+
+.stella_gradientText__2qfnW {
+  background: linear-gradient(to right, hsl(var(--stella-purple)), hsl(var(--stella-cyan)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+}
+
+.stella_glowCyan__foizV {
+  box-shadow: 0 0 20px hsl(var(--stella-glow)),
+              0 0 40px hsl(var(--stella-glow));
+}
+
+.stella_glowPurple__EWTcw {
+  box-shadow: 0 0 20px hsl(var(--stella-purple) / 0.3),
+              0 0 40px hsl(var(--stella-purple) / 0.2);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .stella_glassCard__U415T {
+    transition: none;
+  }
+
+  .stella_glassCard__U415T:hover {
+    transform: none;
+  }
+}
+
+/* Focus States for Accessibility */
+.stella_glassCard__U415T:focus-visible {
+  outline: 2px solid hsl(var(--stella-cyan));
+  outline-offset: 4px;
+}
+

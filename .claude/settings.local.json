@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Bash(gh pr create:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"e:\\ChatGPTJulia\\vintaro_smoke_pr.ps1\")",
+      "Read(//e/ChatGPTJulia/**)",
+      "Bash(git rev-parse:*)",
+      "Bash(git pull:*)",
+      "Bash(gh auth status:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(owner=\"Vintaro-GmbH\")",
+      "Bash(repo=\"vintaro-stellar-interface\")",
+      "Bash(sha=\"111c32593152cc427153f1d9c14f558debb6f7e6\")",
+      "Bash(gh api:*)",
+      "Bash(npx lighthouse:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh repo view:*)",
+      "Bash(mkdir:*)",
+      "Bash(powershell -Command \"Get-Job | Remove-Job -Force\")",
+      "Bash(test:*)",
+      "Bash(npx vercel dev:*)",
+      "Bash(npx kill-port:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

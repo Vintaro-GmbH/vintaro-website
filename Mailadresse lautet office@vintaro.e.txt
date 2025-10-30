@@ -1,0 +1,31 @@
+Mailadresse lautet office@vintaro.eu
+Keine AGBs
+Das schwebende "Powered by Advanced AI" Symbol davor auf jeden Fall weg - Rest behalten? Als Anhaltspunkt, dass man sieht was man mit AI bauen kann?
+
+Was soll bei "Get Started", "Los geht's" und "Mehr erfahren" auf der Startseite passieren?
+
+Menüpunkte auf Englisch behalten, alle anderen Seiten und Informationen auch auf Englisch verfügbar machen
+
+Wie sieht es mit Barrierefreiheit aus? Wo bauen wir die Info ein, dass auf Menschen mit Sehbehinderung UND Menschen mit neurologischen Erkrankungen (GTS,ADHS, ASS...) Rücksicht genommen wird und man gerne Mithilfe von Usern bekommt, wenn diese Idee haben wie man es noch verbessern kann. 
+
+Bei Klick im oberen Menü auf "Stella" schwebt der Text mit Sternchenemoji "Stellar Features" - es heißt STELLA 
+Es ist nicht ersichtlich, dass es sich hier um eine spezielle Lösung mit Stella handeln soll.... Tut es das? Hier sollte die Demo stattfinden - Testanruf bei Stella, Testchat mit Stella notwendig, wenn sie live auf der Seite läuft?
+
+Die ECHTE Stella wird nur erreicht über Kontakt (Telefonnummer von Vintaro GmbH)
+Chatbot soll irgendwie immer einblendbar sein, wenn man es wünscht. ABER NICHT AUTOMATISCH AUFPLOPPEN, sobald man die Seite aufruft. Sowas nervt extrem!!!!
+Evtl. Menüpunkt "Chat" oder unter "Mehr erfahren" - kleine Flappe am rechten Bildschirmrand mit "Stellasymbol" über welches man jederzeit Stella aufrufen und etwas fragen kann.
+
+Menüpunkte unter "Stella" befüllen
+
+Menüpunkt "Features" - Die Aufzählung genügt. Diese muss nicht klickbar sein. Es soll auch nicht die Farbe verändern, wenn man mit dem Mauszeiger drüber hoovert, man denkt sonst, dass hier ein Link nicht funktioniert, wenn bei Klick nichts weiter passiert
+rechts im Programmierfenster wird Stella noch falsch geschrieben (Stellar statt Stella)
+
+Menüpunkt Solutions befüllen mit Inhalten
+
+Contact: Mailadresse aktualisieren zu office@vintaro.eu, KEIN Termin buchen, LiveChat super, Anrufen (dahinter ECHTE Stella - AI Callagent, die Auskünfte geben kann bzw. im Hintergrund von mir mit Informationen gefüttert werden kann - sie ist immer aktualisiert und spezialisiert)
+
+Unterstes Menü mit Impressum usw. befüllen
+
+Diskussion darüber, ob "über uns" gut oder schlecht ist, Preise weg, Presse weg, AGB weg, Karriere weg, ... Es bleibt Impressum und Cookies, darunter ein Fenster mit dem Text über Barrierefreiheit - KEIN Rollstuhlfahrersymbol, sondern Sonnenblumenlogo mit Erklärung warum
+
+Header Vintaro Logo einbauen oder nur VINTARO belassen? Ist die Schriftart richtig und passend zum echten Vintaro Logo? Mir gefällt nur der Name in Großbuchstaben eigentlich sehr gut. 

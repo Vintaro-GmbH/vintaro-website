@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "/[locale]/stella-showcase/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/[locale]/stella-showcase/page.css",
+      "static/chunks/app/[locale]/stella-showcase/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layout.js"
+    ]
+  }
+}
