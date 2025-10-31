@@ -27,7 +27,12 @@
       "Bash(powershell -Command \"Get-Job | Remove-Job -Force\")",
       "Bash(test:*)",
       "Bash(npx vercel dev:*)",
-      "Bash(npx kill-port:*)"
+      "Bash(npx kill-port:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)",
+      "Bash(while read id)",
+      "Bash(do gh api repos/Vintaro-GmbH/vintaro-website/deployments/$id/statuses --jq \".[0] | select(.state == \"\"success\"\") | {id: \"\"$id\"\", state: .state, url: .environment_url, created: .created_at}\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
